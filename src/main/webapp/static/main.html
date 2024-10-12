@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meal Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>献立プランナー</h1>
+    <div id="calendar"></div>
+    <div id="meal-plan">
+        <label><input type="checkbox" id="meat" value="meat">肉</label>
+        <label><input type="checkbox" id="fish" value="fish">魚</label>
+        <label><input type="checkbox" id="vegetables" value="vegetables">野菜</label>
+        <label><input type="checkbox" id="rice" value="rice">米</label>
+        <label><input type="checkbox" id="noodles" value="noodles">麺類</label>
+        <button onclick="generateMealPlan()">献立をランダムで決める</button>
+        <button onclick="saveMealPlan()">献立を保存する</button> 
+        <div id="meal-results"></div>
+    </div>
+    <input type="hidden" id="userId" value="">
+    <script src="calendar.js"></script>
+    <script src="mealPlan.js"></script>
+</body>
+</html>
