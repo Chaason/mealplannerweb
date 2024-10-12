@@ -32,6 +32,10 @@ dependencies {
 	configurations { testImplementation.extendsFrom compileOnly }
 }
 
+bootJar {
+    enabled = true
+}
+
 test {
     useJUnitPlatform()
 }
