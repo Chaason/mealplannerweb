@@ -39,7 +39,7 @@ dependencies {
 }
 
 tasks.named('bootJar') { 
-	archiveFileName = 'mealPlanner-0.0.1-SNAPSHOT-plain.jar'
+	archiveFileName = 'mealPlanner-0.0.1-SNAPSHOT.jar'
 	destinationDirectory = file("$buildDir/libs")
 } 
 
@@ -48,11 +48,13 @@ bootRun {
 } 
 
 jar { 
-	enabled = true 
+	manifest{
+		enabled = false
+	} 
 } 
 
 bootJar {
-	enabled = false
+	enabled = true
 }
 
 test {
