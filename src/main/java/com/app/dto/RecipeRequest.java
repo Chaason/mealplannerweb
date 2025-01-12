@@ -9,5 +9,5 @@ public class RecipeRequest {
     private String username;
     private List<String> ingredients;
 
-    // ゲッターとセッター
+    
 }
