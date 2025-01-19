@@ -45,7 +45,7 @@ tasks.named('bootJar') {
 } 
 
 bootRun { 
-	mainClass.set('com.app.MealPlanmnerApplication')
+	mainClass.set('com.app.MealPlannerApplication')
 } 
 
 jar { 
