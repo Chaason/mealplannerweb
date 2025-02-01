@@ -6,3 +6,6 @@ server.port=${PORT}
 spring.main.web-application-type=reactive
 spring.profiles.active=default
 spring.security.enable=false
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
+spring.thymeleaf.check-template-location=true
