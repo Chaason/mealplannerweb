@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
@@ -14,10 +15,14 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                .requestMatchers("/", "/login", "/test", "/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico", "/login.html", "/register.html").permitAll()  // 静的リソースとルートパスを許可
+                .requestMatchers("/", "/login", "/main", "/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico", "/login.html", "/register.html").permitAll()  // 必要なパスを許可
                 .anyRequest().authenticated()
             )
-            .csrf(csrf -> csrf.disable());
+            .csrf(csrf -> csrf.disable())
+            .sessionManagement(sessionManagement -> 
+                sessionManagement
+                    .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+            );
 
         return http.build();
     }
