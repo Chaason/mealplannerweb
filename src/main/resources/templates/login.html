@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ログイン</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>ログインページ</title>
 </head>
 <body>
-    <h1>ログイン</h1>
-    <input type="text" id="username" placeholder="ユーザー名">
-    <input type="password" id="password" placeholder="パスワード">
-    <button onclick="login()">ログイン</button>
-    <button onclick="redirectToRegister()">新規登録</button>
-    <script src="login.js"></script>
+    <h1>ログインページ</h1>
+    <form action="/login" method="post">
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">ログイン</button>
+    </form>
+    <p th:text="${error}"></p>
 </body>
 </html>
