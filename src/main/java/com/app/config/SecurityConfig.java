@@ -14,7 +14,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                .requestMatchers("/", "/test", "/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico", "/login.html", "/register.html", "/main.html", "/profile.html").permitAll()  // 静的リソースとルートパスを許可
+                .requestMatchers("/", "/login", "/test", "/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico", "/login.html", "/register.html").permitAll()  // 静的リソースとルートパスを許可
                 .anyRequest().authenticated()
             )
             .csrf(csrf -> csrf.disable());
