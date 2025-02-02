@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping("/login")
     public String login() {
-        return "login";  // テンプレート名（src/main/resources/templates/login.html）
+        return "login"; 
     }
 }

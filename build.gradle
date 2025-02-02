@@ -34,6 +34,7 @@ dependencies {
 	runtimeOnly 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.+'
 	testImplementation 'org.mockito:mockito-junit-jupiter:5.+'
 	testing.suites.test.useJUnitJupiter('5.+')
+	implementation 'io.github.cdimascio:dotenv-java:3.0.0'
 	
 	configurations { testImplementation.extendsFrom compileOnly }
 }
@@ -60,3 +61,6 @@ bootJar {
 test {
    enabled = false
 }
+
+
+
