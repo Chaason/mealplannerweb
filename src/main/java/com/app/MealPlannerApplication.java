@@ -1,7 +1,5 @@
 package com.app;
 
-import java.io.File;
-
 import javax.sql.DataSource;
 
 import org.springframework.boot.SpringApplication;
@@ -44,7 +42,7 @@ public class MealPlannerApplication extends SpringBootServletInitializer {
     	return dataSource; 
     }
     
-    public static void printDirectoryStructure(File dir, int depth) {
+    /*public static void printDirectoryStructure(File dir, int depth) {
         if (dir.isDirectory()) {
             for (File file : dir.listFiles()) {
                 for (int i = 0; i < depth; i++) {
@@ -56,6 +54,6 @@ public class MealPlannerApplication extends SpringBootServletInitializer {
                 }
             }
         }
-    }
+    }*/
   
 }
