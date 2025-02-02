@@ -14,5 +14,7 @@ spring.thymeleaf.enabled=true
 spring.jpa.hibernate.ddl-auto=update 
 spring.jpa.show-sql=true
 logging.level.org.springframework=DEBUG
+logging.level.org.hibernate=DEBUG
+logging.level.org.thymeleaf=TRACE
 spring.security.user.name=admin
 spring.security.user.password=admin
