@@ -14,10 +14,10 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                .requestMatchers("/", "/css/**", "/js/**", "/images/**", "/static/**", "/login.html", "/register.html", "/main.html", "/profile.html").permitAll()  // 静的リソースとルートパスを許可
+                .requestMatchers("/", "/test", "/css/**", "/js/**", "/images/**", "/static/**", "/login.html", "/register.html", "/main.html", "/profile.html").permitAll()  // 静的リソースとルートパスを許可
                 .anyRequest().authenticated()  // それ以外のリクエストを認証
             )
-            .csrf(csrf -> csrf.disable());  // 新しい方法でCSRF保護を無効に
+            .csrf(csrf -> csrf.disable());  // CSRF保護を無効に
 
         return http.build();
     }
