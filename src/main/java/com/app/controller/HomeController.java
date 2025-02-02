@@ -10,6 +10,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class HomeController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	@GetMapping("/") 
+	public String home() { 
+		logger.debug("HomeController: home method called"); 
+		return "index"; 
+	}
 
     @GetMapping("/login")
     public String login() {
