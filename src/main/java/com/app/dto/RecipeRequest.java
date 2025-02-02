@@ -8,6 +8,4 @@ import lombok.Data;
 public class RecipeRequest {
     private String username;
     private List<String> ingredients;
-
-    
 }
