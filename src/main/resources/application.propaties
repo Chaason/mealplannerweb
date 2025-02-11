@@ -18,3 +18,4 @@ logging.level.org.hibernate=DEBUG
 logging.level.org.thymeleaf=TRACE
 spring.security.user.name=admin
 spring.security.user.password=admin
+spring.jpa.open-in-view=false
