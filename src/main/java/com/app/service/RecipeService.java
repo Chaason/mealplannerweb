@@ -1,14 +1,12 @@
 package com.app.service;
 
-import java.util.Collections;
-import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.app.entity.Recipe;
-import com.app.entity.User;
 import com.app.repository.RecipeRepository;
 
 @Service
@@ -16,24 +14,24 @@ public class RecipeService {
     @Autowired
     private RecipeRepository recipeRepository;
 
-    public List<Recipe> getRandomRecipes(User user, List<String> ingredients) {
-        List<Recipe> recipes;
-        if (ingredients.isEmpty()) {
-            recipes = recipeRepository.findByUser_Id(user.getId());
-        } else {
-            recipes = recipeRepository.findByIngredientsContainingAndUser_Id(String.join(",", ingredients), user.getId());
+    public List<Recipe> getRandomRecipes() {
+        List<Recipe> allRecipes = recipeRepository.findAll();
+        Random random = new Random();
+        int totalRecipes = allRecipes.size();
+
+        if (totalRecipes <= 3) {
+            return allRecipes;
         }
-        Collections.shuffle(recipes);
-        return recipes.size() > 3 ? recipes.subList(0, 3) : recipes;
+
+        return List.of(
+            allRecipes.get(random.nextInt(totalRecipes)),
+            allRecipes.get(random.nextInt(totalRecipes)),
+            allRecipes.get(random.nextInt(totalRecipes))
+        );
     }
 
-    public Recipe saveRecipe(Recipe recipe) {
-        recipe.setSavedDate(new Date());
-        return recipeRepository.save(recipe);
+    public List<Recipe> getAllRecipes() {
+        return recipeRepository.findAll();
     }
-
-    public List<Recipe> getUserRecipes(Long userId) {
-        return recipeRepository.findByUser_Id(userId);
-    }
-
 }
+
