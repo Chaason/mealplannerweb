@@ -61,6 +61,3 @@ bootJar {
 test {
    enabled = false
 }
-
-
-

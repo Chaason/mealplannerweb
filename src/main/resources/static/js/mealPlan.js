@@ -1,11 +1,10 @@
 async function generateMealPlan() {
     try {
-        const response = await fetch('/api/recipes/random', {
-            method: 'POST',
-            headers: {
+        const response = await fetch('/api/recipes/random', {method: 'GET',
+            /*headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({})
+            body: JSON.stringify({})*/
         });
 
         if (!response.ok) throw new Error('献立の生成に失敗しました');
