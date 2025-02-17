@@ -30,17 +30,14 @@ public class RecipeService {
         );
     }
 
-    
+    public List<Recipe> getAllRecipes() {
+        return recipeRepository.findAll();
+    }
+}
     /*public List<Recipe> getRandomRecipes() {
         List<Recipe> allRecipes = recipeRepository.findAll();
         Collections.shuffle(allRecipes);
 
         return allRecipes.stream().limit(3).toList();
     }*/
-
-
-    public List<Recipe> getAllRecipes() {
-        return recipeRepository.findAll();
-    }
-}
 

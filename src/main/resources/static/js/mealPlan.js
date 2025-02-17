@@ -26,5 +26,3 @@ async function generateMealPlan() {
         alert(error.message);
     }
 }
-
-

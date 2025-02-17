@@ -15,14 +15,8 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
             .authorizeHttpRequests(authorizeRequests -> authorizeRequests
-                .requestMatchers("/", "/login", "/main", "/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico", "/login.html", "/api/recipes/random").permitAll()
+                .requestMatchers("/", "/login", "/main", "/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico", "/login.html").permitAll()
                 .anyRequest().authenticated()
-            )
-            .formLogin(formLogin -> 
-            formLogin
-                .loginPage("/login")
-                .defaultSuccessUrl("/main", true)
-                .permitAll()
             )
             .csrf(csrf -> csrf.disable())
             .sessionManagement(sessionManagement -> 
@@ -33,4 +27,5 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
 
