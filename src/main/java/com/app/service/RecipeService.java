@@ -21,7 +21,7 @@ public class RecipeService {
         if (categories == null || categories.isEmpty()) {
             allRecipes = recipeRepository.findAll();
         } else {
-            allRecipes = recipeRepository.findByCategory(categories);
+            allRecipes = recipeRepository.findByCategoryIn(categories);
         }
 
         Random random = new Random();
