@@ -1,7 +1,7 @@
 package com.app.service;
 
-import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,8 +14,16 @@ public class RecipeService {
     @Autowired
     private RecipeRepository recipeRepository;
 
-    /*public List<Recipe> getRandomRecipes() {
-        List<Recipe> allRecipes = recipeRepository.findAll();
+    public List<Recipe> getRandomRecipes(List<String> categories) {
+        List<Recipe> allRecipes;
+
+        // チェックが一つもついていない場合は、すべての献立を取得
+        if (categories == null || categories.isEmpty()) {
+            allRecipes = recipeRepository.findAll();
+        } else {
+            allRecipes = recipeRepository.findByCategory(categories);
+        }
+
         Random random = new Random();
         int totalRecipes = allRecipes.size();
 
@@ -28,14 +36,14 @@ public class RecipeService {
             allRecipes.get(random.nextInt(totalRecipes)),
             allRecipes.get(random.nextInt(totalRecipes))
         );
-    }*/
+    }
     
-    public List<Recipe> getRandomRecipes() {
+    /*public List<Recipe> getRandomRecipes() {
         List<Recipe> allRecipes = recipeRepository.findAll();
         Collections.shuffle(allRecipes);
 
         return allRecipes.stream().limit(3).toList();
-    }
+    }*/
 
 
     public List<Recipe> getAllRecipes() {

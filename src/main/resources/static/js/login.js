@@ -17,4 +17,3 @@ async function login() {
         alert(error.message);
     }
 }
-

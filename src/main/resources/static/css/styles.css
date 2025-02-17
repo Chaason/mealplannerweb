@@ -1,50 +1,92 @@
+/* 全体のスタイルを統一 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* 背景とコンテンツの中央配置 */
 body {
-    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    height: 100vh;
 }
 
-#calendar, #meal-plan {
-    width: 100%;
-    max-width: 600px;
+/* 見出しのデザイン */
+h1 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.day {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 5px;
+/* フォームのスタイル */
+form {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
 }
 
-@media (max-width: 600px) {
-    .day {
-        width: 100%;
-        box-sizing: border-box;
-    }
+/* 入力フィールドのデザイン */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
-.notification {
-    position: fixed;
-    top: 10px;
-    right: 10px;
+/* ボタンのデザイン */
+button {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    border: none;
     padding: 10px;
     border-radius: 5px;
-    color: white;
-    opacity: 0.9;
-    z-index: 1000;
+    cursor: pointer;
+    transition: background 0.3s;
 }
 
-.notification.info {
-    background-color: blue;
+button:hover {
+    background-color: #2980b9;
 }
 
-.notification.success {
-    background-color: green;
+/* エラーメッセージ */
+p {
+    color: red;
+    margin-top: 10px;
 }
 
-.notification.error {
-    background-color: red;
+/* 献立結果のデザイン */
+#meal-results {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#meal-results div {
+    background: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* リンクのデザイン */
+a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
 }
