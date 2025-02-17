@@ -1,7 +1,7 @@
 package com.app.service;
 
+import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,18 +24,14 @@ public class RecipeService {
             allRecipes = recipeRepository.findByCategoryIn(categories);
         }
 
-        Random random = new Random();
         int totalRecipes = allRecipes.size();
 
         if (totalRecipes <= 3) {
             return allRecipes;
         }
 
-        return List.of(
-            allRecipes.get(random.nextInt(totalRecipes)),
-            allRecipes.get(random.nextInt(totalRecipes)),
-            allRecipes.get(random.nextInt(totalRecipes))
-        );
+        Collections.shuffle(allRecipes);
+        return allRecipes.subList(0, 3);
     }
     
     /*public List<Recipe> getRandomRecipes() {
