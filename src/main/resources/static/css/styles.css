@@ -44,7 +44,7 @@ input {
 
 /* ボタンのデザイン */
 button {
-    width: 40%; /* ボタンの幅を調整 */
+    width: 50%; /* ボタンの幅を調整 */
     padding: 15px;
     background-color: #3498db;
     color: white;
