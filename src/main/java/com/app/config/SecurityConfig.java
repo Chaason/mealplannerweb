@@ -18,6 +18,12 @@ public class SecurityConfig {
                 .requestMatchers("/", "/login", "/main", "/css/**", "/js/**", "/images/**", "/static/**", "/favicon.ico", "/login.html", "/api/recipes/random").permitAll()
                 .anyRequest().authenticated()
             )
+            .formLogin(formLogin -> 
+            formLogin
+                .loginPage("/login")
+                .defaultSuccessUrl("/main", true)
+                .permitAll()
+            )
             .csrf(csrf -> csrf.disable())
             .sessionManagement(sessionManagement -> 
                 sessionManagement
