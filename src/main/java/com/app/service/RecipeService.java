@@ -15,6 +15,7 @@ public class RecipeService {
     private RecipeRepository recipeRepository;
 
     public List<Recipe> getRandomRecipes(List<String> categories) {
+    	System.out.println("Received categories: " + categories);
         List<Recipe> allRecipes;
 
         // チェックが一つもついていない場合は、すべての献立を取得
