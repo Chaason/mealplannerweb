@@ -44,18 +44,27 @@ input {
 
 /* ボタンのデザイン */
 button {
-    width: 100%;
+    width: 80%; /* ボタンの幅を調整 */
+    padding: 15px;
     background-color: #3498db;
     color: white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
+    border-radius: 8px; /* 角を丸める */
+    font-size: 1.2rem;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* シャドウを強化 */
 }
 
 button:hover {
     background-color: #2980b9;
+    transform: scale(1.05); /* ホバー時に少し大きくなる */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* シャドウの強化 */
+}
+
+button:active {
+    background-color: #1d6f92; /* クリック時の色 */
+    transform: scale(0.98); /* クリック時に少し縮む */
 }
 
 /* エラーメッセージ */
