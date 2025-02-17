@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,8 +18,8 @@ public class RecipeController {
     private RecipeService recipeService;
 
     @PostMapping("/random")
-    public List<Recipe> getRandomRecipes(@RequestBody(required = false) List<String> categories) {
-        return recipeService.getRandomRecipes(categories);
+    public List<Recipe> getRandomRecipes() {
+        return recipeService.getRandomRecipes();
     }
 
     @GetMapping("/all")
@@ -28,4 +27,5 @@ public class RecipeController {
         return recipeService.getAllRecipes();
     }
 }
+
 
