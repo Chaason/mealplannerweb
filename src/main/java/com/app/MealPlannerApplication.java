@@ -1,13 +1,9 @@
 package com.app;
 
-import javax.sql.DataSource;
-
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
-import org.springframework.context.annotation.Bean;
-import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 @SpringBootApplication
 public class MealPlannerApplication extends SpringBootServletInitializer {
@@ -32,7 +28,7 @@ public class MealPlannerApplication extends SpringBootServletInitializer {
         return application.sources(MealPlannerApplication.class);
     }
     
-    @Bean 
+    /*@Bean 
     public DataSource dataSource() { 
     	DriverManagerDataSource dataSource = new DriverManagerDataSource(); 
     	dataSource.setDriverClassName("org.postgresql.Driver");
@@ -40,7 +36,7 @@ public class MealPlannerApplication extends SpringBootServletInitializer {
     	dataSource.setUsername("u2liisg25bhq4d"); 
     	dataSource.setPassword("p9edddddd0a8e58a51f16ce1fdd799a426f22a212104d984fbb7a1601fa7288b0"); 
     	return dataSource; 
-    }
+    }*/
     
     /*public static void printDirectoryStructure(File dir, int depth) {
         if (dir.isDirectory()) {

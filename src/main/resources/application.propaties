@@ -1,6 +1,6 @@
-spring.datasource.url=jdbc:postgresql://cd27da2sn4hj7h.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/dbvk1rks20dsvk
-spring.datasource.username=u2liisg25bhq4d
-spring.datasource.password=p9edddddd0a8e58a51f16ce1fdd799a426f22a212104d984fbb7a1601fa7288b0
+spring.datasource.url=${SPRING_DATASOURCE_URL}
+spring.datasource.username=${SPRING_DATASOURCE_USERNAME}
+spring.datasource.password=${SPRING_DATASOURCE_PASSWORD}
 spring.datasource.driver-class-name=org.postgresql.Driver
 server.port=${PORT}
 spring.profiles.active=default

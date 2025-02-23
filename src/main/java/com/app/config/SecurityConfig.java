@@ -22,13 +22,8 @@ public class SecurityConfig {
             .sessionManagement(sessionManagement -> 
                 sessionManagement
                     .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
-            )
-            .logout(logout -> logout
-            		.logoutUrl("/logout")  // ログアウトのURLを設定
-            		.invalidateHttpSession(true) // セッションを無効化
-            		.clearAuthentication(true)   // 認証情報をクリア
-            		.logoutSuccessUrl("/login")  // ログアウト後に遷移するURL
             );
+            
         return http.build();
     }
 }
